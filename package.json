@@ -1,0 +1,54 @@
+{
+  "name": "validar-telefone",
+  "version": "1.0.0",
+  "description": "Helper com combinação de regras que ajudam a definir se um telefone/celular é provavelmente válido",
+  "keywords": [
+    "Validador",
+    "Verificador",
+    "Celular",
+    "Telefone"
+  ],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "repository": "git@github.com:roniemeque/validador-telefones.git",
+  "author": "Ronie <roniemeque@icloud.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^25.1.4",
+    "jest": "^25.2.3",
+    "prettier": "^2.0.2",
+    "ts-jest": "^25.2.1",
+    "tslint": "^6.1.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.8.3"
+  },
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "prepare": "yarn build",
+    "prepublishOnly": "npm test && yarn lint",
+    "preversion": "yarn lint",
+    "version": "yarn format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "jest": {
+    "transform": {
+      "^.+\\.(t|j)sx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
+}
