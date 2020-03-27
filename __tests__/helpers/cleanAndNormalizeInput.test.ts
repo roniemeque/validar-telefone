@@ -1,4 +1,4 @@
-import { cleanAndNormalizeInput } from "../src/helpers";
+import cleanAndNormalizeInput from "../../src/helpers/cleanAndNormalizeInput";
 
 describe("CleanAndNormalizeInput tests", () => {
   test("should throw error when input is not a string or number", () => {

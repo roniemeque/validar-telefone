@@ -1,4 +1,4 @@
-export const cleanAndNormalizeInput = (phone: string | number): string => {
+const cleanAndNormalizeInput = (phone: string | number): string => {
   if (typeof phone === "number") {
     return `${phone}`;
   }
@@ -9,3 +9,5 @@ export const cleanAndNormalizeInput = (phone: string | number): string => {
 
   throw new Error("O input precisa ser string ou numérico");
 };
+
+export default cleanAndNormalizeInput;
