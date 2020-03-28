@@ -1,6 +1,7 @@
 import cleanAndNormalizeInput from "./helpers/cleanAndNormalizeInput";
 import hasCorrectSize from "./validators/hasCorrectSize";
 import isValidMobile from "./validators/isValidMobile";
+import hasShadyPatterns from "./validators/hasShadyPatterns";
 
 const validator = (
   phone: string | number,
@@ -11,7 +12,8 @@ const validator = (
     codigoAreaPossivel = false,
     codigoPaisPresente = false,
     codigoPaisPossivel = false,
-    permitirCelular = true
+    permitirCelular = true,
+    bloquearPadroesIncomuns = true
   } = {}
 ) => {
   try {
@@ -31,6 +33,10 @@ const validator = (
     }
 
     if (permitirCelular && !isValidMobile(cleansed)) {
+      return false;
+    }
+
+    if (bloquearPadroesIncomuns && hasShadyPatterns(cleansed)) {
       return false;
     }
 
