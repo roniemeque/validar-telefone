@@ -10,9 +10,13 @@ describe("validator tests", () => {
     expect(validator("")).toBeFalsy();
     expect(validator("aa")).toBeFalsy();
     expect(validator("9999-9999")).toBeFalsy();
+    expect(
+      validator("(17) 99399-9393", { permitirCelular: false })
+    ).toBeFalsy();
+    expect(validator("(17) 29399-9393")).toBeFalsy();
   });
 
-  test("should skip length validation", () => {
+  test("should skip lenght validation", () => {
     expect(
       validator("9999-9999", {
         validarTamanho: false
