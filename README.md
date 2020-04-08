@@ -6,6 +6,12 @@ Valida telefones fixos e celulares brasileiros. Checa tamanho, repetições inv�
 
 A função retorna `true` ou `false` para o telefone que for passado para ela
 
+Instalação
+```
+npm install validar-telefone --save
+yarn add validar-telefone
+```
+
 Exemplo de uso:
 
 ```javascript
