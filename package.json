@@ -1,6 +1,6 @@
 {
   "name": "validar-telefone",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Helper com combinação de regras que ajudam a definir se um telefone/celular é provavelmente válido",
   "keywords": [
     "Validador",
